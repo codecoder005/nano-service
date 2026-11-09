@@ -1,0 +1,11 @@
+services:
+  nano-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nano-service:1.0
+    container_name: nano-service-cont
+    pull_policy: build
+    ports:
+      - "8081:8081"
+    restart: unless-stopped

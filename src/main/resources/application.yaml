@@ -1,0 +1,70 @@
+spring:
+  application:
+    name: nano-service
+    version: 1.0.0
+    group: popcorn
+    admin:
+      enabled: true
+      jmx-name: org.springframework.boot:type=Admin,name=SpringApplication
+
+## Spring Boot actuator endpoints
+management:
+  endpoint:
+    health:
+      show-components: always
+      show-details: always
+      access: unrestricted
+    metrics:
+      access: unrestricted
+    prometheus:
+      access: unrestricted
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  prometheus:
+    metrics:
+      export:
+        enabled: false
+  tracing:
+    propagation:
+      type: w3c
+    sampling:
+      probability: 1.0
+    export:
+      enabled: false
+      otlp:
+        enabled: false
+  info:
+    build:
+      enabled: true
+    defaults:
+      enabled: true
+    env:
+      enabled: true
+    git:
+      enabled: true
+      mode: full
+    java:
+      enabled: true
+    os:
+      enabled: true
+    process:
+      enabled: true
+    ssl:
+      enabled: true
+  opentelemetry:
+    enabled: false
+    tracing:
+      export:
+        otlp:
+          endpoint: http://localhost:4318/v1/traces
+
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          filter:
+            CommonsRequestLoggingFilter: DEBUG
