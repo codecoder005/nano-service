@@ -13,7 +13,7 @@ import lombok.*;
         description = "Response returned after an order has been successfully placed",
         example = """
         {
-          "orderId": "ORD-20261109-000123",
+          "orderId": "d6143433-c19d-4377-b06f-a23a55b6de83",
           "orderStatus": "CONFIRMED",
           "paymentStatus": "PENDING"
         }"""
@@ -21,7 +21,7 @@ import lombok.*;
 public class PlaceOrderResponse {
     @Schema(
             description = "Unique identifier of the newly created order. Use it to track or cancel the order.",
-            example = "ORD-20261109-000123",
+            example = "d6143433-c19d-4377-b06f-a23a55b6de83",
             accessMode = Schema.AccessMode.READ_ONLY
     )
     private String orderId;

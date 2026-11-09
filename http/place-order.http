@@ -1,0 +1,13 @@
+###
+POST http://localhost:8081/api/v1/orders
+Content-Type: application/json
+
+{
+  "itemIds": [
+    "ITM-1001",
+    "ITM-2002"
+  ],
+  "customerEmail": "jane.doe@example.com",
+  "customerPhoneNumber": "+919876543210",
+  "deliveryAddress": "221B Baker Street, Bengaluru, Karnataka 560001, India"
+}
